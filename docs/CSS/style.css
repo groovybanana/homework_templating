@@ -1,0 +1,163 @@
+p {
+	font-family: 'Gothic A1', sans-serif;
+	color: #DDDDDD;
+	margin: 20px;
+}
+
+h1, h2, h3 {
+font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+	color: #f5a442;
+	font-size: 36pt;
+	margin: 35px 0 15px 20px;
+}
+
+h2 {
+	color: #f5a442;
+	font-size: 28pt;
+	margin: 0 0 0 20px;
+}
+
+body {
+	background-color: #353535; 
+	
+}
+
+/* this is for the static image on the right side of the page */
+.image
+{
+	position: fixed;
+    
+}
+ 
+
+.intro {
+	font-size: 16pt;
+}
+
+.date {
+	font-size: 15pt;
+	font-style: italic;
+	margin: 0 0 0 20px;
+	color: #f7ebdc;
+}
+
+/* the next to classes will align images to right/left in posts*/
+.bimgright {
+	float:right; 
+	margin:20px;
+}
+
+.bimgleft {
+	display: inline;
+	float:left; 
+	margin:20px;
+}
+
+/* Settings for individual blog posts */
+
+.entrycontainer {
+	width: 100%;
+	background-color: pink;
+}
+
+.class bentry {
+	height: 80%;
+	width: 80%;
+    background-color: #353535; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	float: left;
+
+}
+
+/* the next to define the gradient outline on blog post */
+.outer {
+  width: 100%;
+  margin-right: 451px;
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to right, #F5A442, #824904);
+  padding: 3px;
+  margin-bottom: 25px;	
+}
+
+.inner {
+  background: #353535;
+  color: white;
+  padding: 5px;
+  overflow:auto;
+}
+
+/* Navigation settings */
+nav {
+	margin: 27px auto 0;
+	position: absolute;
+	left: 25;
+	width: 590px;
+	height: 50px;
+	background-color: #474747;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 100px;
+}
+
+.nav-pills .nav-link:not(.active) {
+    background-color: #262525;
+	color: orange;
+	margin: 0 5px;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    background-color: #F5A442;
+	color: #353535;
+	margin: 0 5px;
+	font-weight: bolder;
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:hover,.nav-pills .nav-link.active:focus{
+    background-color:#F5A442;
+	color:#353535;
+	font-weight: bolder;
+	margin: 0 5px;
+
+	}
+
+/*text for the bootstrap cards*/
+.cardtext {
+	color: black;
+}
+
+.copyright {
+	color: #9b6f1e;
+	text-align: center;
+}
+

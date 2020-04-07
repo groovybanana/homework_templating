@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{{title}}</title>
+  <meta name="description" content="Christopher Moe's Spring 2020 project">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Gothic+A1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+<!-- begin navigation-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+              <ul class="nav nav-pills">
+                <li class="nav-item pill-1">
+                    <a class="nav-link" data-toggle="tab" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item pill-2">
+                    <a class="nav-link" data-toggle="tab" href="./about.html">About</a>
+                </li>
+                <li class="nav-item pill-3">
+                  <a class="nav-link" data-toggle="tab" href="./blog.html">Blog</a>
+                </li>
+                <li class="nav-item pill-4">
+                  <a class="nav-link" data-toggle="tab" href="./portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item pill-5">
+                  <a class="nav-link" data-toggle="tab" href="./contact.html">Contact</a>
+                </li>
+              </ul>
+<!-- end navigation-->
+
+{{content}}
+
+</div>
+<!-- begin static image on right of page-->
+<div class="col">
+  <div class="image">
+<img src="./img/me-good.jpg" />
+<!-- end static image on right of page-->
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-2"><span class="copyright">Copyright {{year}}</span>
+  </div>
+</div>
+</body>
+</html>
