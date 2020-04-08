@@ -1,34 +1,29 @@
-pages = [ {
-    "filename": "./content/index.html", 
-    "output": "./docs/index.html", 
-    "title": "Chris Moe's Spring 2020 bootcamp project",
-    "active": '<a class="nav-link active" data-toggle="tab" href="./index.html">', 
-},
-{
-    "filename": "./content/blog.html", 
-    "output": "./docs/blog.html", 
-    "title": "My personal blog",
-    "active": '<a class="nav-link active" data-toggle="tab" href="./blog.html">', 
-},
-{
-    "filename": "./content/about.html", 
-    "output": "./docs/about.html", 
-    "title": "Learn all about Me",
-    "active": '<a class="nav-link active" data-toggle="tab" href="./about.html">', 
-},
-{
-    "filename": "./content/contact.html", 
-    "output": "./docs/contact.html", 
-    "title": "Reach out and get in touch with me",
-    "active": '<a class="nav-link active" data-toggle="tab" href="./contact.html">', 
-},
-{
-    "filename": "./content/portfolio.html", 
-    "output": "./docs/portfolio.html", 
-    "title": "Chris Moe: Portfolio",
-    "active": '<a class="nav-link active" data-toggle="tab" href="./portfolio.html">', 
-},
-]
+import glob
+import os
+
+pages = []
+
+def page_list():
+    all_html_files = glob.glob('content/*.html')
+    for item in all_html_files:
+        file_path = os.path.basename(item)
+        name_only, extension = os.path.splitext(file_path)
+        pages.append({
+            "filename": item,
+            "output": 'docs/' + file_path,
+            "active": "{{active_" + name_only + "}}",
+            "title": name_only,
+            "link": file_path,
+        })
+
+
+page_list()
+print('-----------------------------------')
+
+from pprint import pprint
+pprint(pages)
+
+# print(pages)
 
 def year():
     import datetime
