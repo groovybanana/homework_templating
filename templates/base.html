@@ -4,12 +4,14 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{{title}}</title>
+  <title>{{ title|title }}</title>
   <meta name="description" content="Christopher Moe's Spring 2020 project">
+  
+</ul>
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Gothic+A1&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
@@ -19,25 +21,16 @@
   <div class="row">
     <div class="col">
               <ul class="nav nav-pills">
-                <li class="nav-item pill-1">
-                    <a class="nav-link" data-toggle="tab" href="./index.html">Home</a>
+                {% for page in pages %}
+                <li class="nav-item">
+                  <a class="nav-link{% if page.title == title %} {{ page.active }}{% endif %}"data-toggle="tab" href="{{ page.link }}">{{ page.title|title }}</a>
                 </li>
-                <li class="nav-item pill-2">
-                    <a class="nav-link" data-toggle="tab" href="./about.html">About</a>
-                </li>
-                <li class="nav-item pill-3">
-                  <a class="nav-link" data-toggle="tab" href="./blog.html">Blog</a>
-                </li>
-                <li class="nav-item pill-4">
-                  <a class="nav-link" data-toggle="tab" href="./portfolio.html">Portfolio</a>
-                </li>
-                <li class="nav-item pill-5">
-                  <a class="nav-link" data-toggle="tab" href="./contact.html">Contact</a>
-                </li>
+                {% endfor %}
+              
               </ul>
 <!-- end navigation-->
 
-{{content}}
+{{ content }}
 
 </div>
 <!-- begin static image on right of page-->
