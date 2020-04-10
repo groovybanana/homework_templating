@@ -2,6 +2,7 @@ import glob
 import os
 from jinja2 import Template
 import datetime
+import re
 
 pages = [] # creating an empty pages list to fill dynamically fill from the contents of the content folder
 
@@ -9,6 +10,12 @@ pages = [] # creating an empty pages list to fill dynamically fill from the cont
 def year(): # get current year for copyright
     now = datetime.datetime.now()
     return str(now.year)
+
+def new_page(): # function for creating a new page via the command line
+    page_name = input('What is the name of your page? ') # asks what the new page should be called
+    clean_name = re.sub('[^0-9a-zA-Z]+', '_', page_name) # cleans given name of page to replace non alphanumeric characters with an underscore
+    content = '<h1>New Content!</h1>\n\n<p>New content...</p>' # defines dummy content for new pages
+    open('content/'+clean_name+'.html', "w+").write(content) # opens up new page and writes dummy content to it
 
 
 
@@ -43,4 +50,3 @@ def create_pages():
 
         open(page['output'], "w+").write(result) # opens the individual html pages and writes the value of result to the individual pages
 
-# create_pages()
