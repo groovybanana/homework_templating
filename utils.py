@@ -3,16 +3,13 @@ import os
 from jinja2 import Template
 import datetime
 
-print('Begin generating pages')
 pages = [] # creating an empty pages list to fill dynamically fill from the contents of the content folder
 
-print('beep')
 
 def year(): # get current year for copyright
     now = datetime.datetime.now()
     return str(now.year)
 
-print('bop')
 
 
 def my_pages(): #this function creates a dynamically generated list of pages contained in the content folder
@@ -30,12 +27,6 @@ def my_pages(): #this function creates a dynamically generated list of pages con
 
 my_pages()
 
-print('boop')
-
-
-# from pprint import pprint
-# pprint(pages)
-
 def create_pages():
     for page in pages: # for loop using the pages list that was dynamically generated above
         page_html = open(page['filename']).read() # defining the content of the page, what will replace {{ contnet }} in the template
@@ -52,6 +43,4 @@ def create_pages():
 
         open(page['output'], "w+").write(result) # opens the individual html pages and writes the value of result to the individual pages
 
-create_pages()
-print('blip')
-print('Finished generating pages')
+# create_pages()
