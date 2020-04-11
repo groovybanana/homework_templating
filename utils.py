@@ -14,7 +14,6 @@ def new_page(): # function for creating a new page via the command line
     content = '<h1>New Content!</h1>\n\n<p>New content...</p>' # defines dummy content for new pages
     open('content/'+clean_name+'.html', "w+").write(content) # opens up new page and writes dummy content to it
 
-
 pages = [] # creating an empty pages list to fill dynamically fill from the contents of the content folder
 
 def my_pages(): #this function creates a dynamically generated list of pages contained in the content folder
@@ -22,7 +21,7 @@ def my_pages(): #this function creates a dynamically generated list of pages con
     for item in all_html_files:
         file_path = os.path.basename(item) #prints the filepath, or in this case, the filename since all files are inside the same folder
         name_only, extension = os.path.splitext(file_path) #this splits the value of file_path, which is something like index.html into two parts, name_only, which returns index and extenstion which returns .html
-        pages.append({ # this appeads the following key/value pairs to my currently empty pages list
+        pages.append({ # this appends the following key/value pairs to my currently empty pages list
             "filename": item, 
             "output": 'docs/' + file_path,
             "active": 'active',
@@ -35,8 +34,8 @@ my_pages()
 def create_pages():
     for page in pages: # for loop using the pages list that was dynamically generated above
         page_html = open(page['filename']).read() # defining the content of the page, what will replace {{ contnet }} in the template
-        template_html = open("templates/base.html").read() # defining our template html, basically this is simply saying that template_html is the same as base.html in the templates folder
-        template = Template(template_html) # defining Jinja template... I think...
+        template_html = open("templates/base.html").read() # defining the template html, basically this is simply saying that template_html is the same as base.html in the templates folder
+        template = Template(template_html) # defining Jinja template
         result = template.render({  # rendering the jinja template and assigning the result to the result variable
             'title': page['title'], # the key title is given the value of title key from the pages list
             'content': page_html, # the key content is given the value of page_html 
