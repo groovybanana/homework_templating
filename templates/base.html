@@ -23,10 +23,8 @@
               <ul class="nav nav-pills">
                 {% for page in pages %}
                 <li class="nav-item">
-                  <a class="nav-link{% if page.title == title %} {{ page.active }}{% endif %}"data-toggle="tab" href="{{ page.link }}">{{ page.title|title }}</a>
-                </li>
+                  <a class="nav-link{% if page.title == title %} {{ page.active }}{% endif %}"data-toggle="tab" href="{{ page.link }}">{% if page.title == 'index' %}Home{% else %}{{ page.title }}{% endif %}</a></li>
                 {% endfor %}
-              
               </ul>
 <!-- end navigation-->
 

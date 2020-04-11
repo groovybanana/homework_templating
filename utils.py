@@ -4,9 +4,6 @@ from jinja2 import Template
 import datetime
 import re
 
-pages = [] # creating an empty pages list to fill dynamically fill from the contents of the content folder
-
-
 def year(): # get current year for copyright
     now = datetime.datetime.now()
     return str(now.year)
@@ -18,6 +15,7 @@ def new_page(): # function for creating a new page via the command line
     open('content/'+clean_name+'.html', "w+").write(content) # opens up new page and writes dummy content to it
 
 
+pages = [] # creating an empty pages list to fill dynamically fill from the contents of the content folder
 
 def my_pages(): #this function creates a dynamically generated list of pages contained in the content folder
     all_html_files = glob.glob('content/*.html') # list of all files inside the content folder
@@ -49,4 +47,3 @@ def create_pages():
         })
 
         open(page['output'], "w+").write(result) # opens the individual html pages and writes the value of result to the individual pages
-
